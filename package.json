@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "deploy": "npm run build && gh-pages -d dist -t"
+    "deploy": "npm run build && gh-pages -d dist -t && --repo https://github.com/insreps/hakosagashi.git"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
