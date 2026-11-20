@@ -1,6 +1,6 @@
 {
   "name": "HakoSagashi",
-  "description": "公共施設と民間レンタルスペースを部屋単位の設備・広さ・利用条件・料金から横断検索できる練習場所検索サービス（プロトタイプ）",
+  "description": "公共施設と民間レンタルスペースを部屋単位の設備・広さ・利用条件・料金から横断検索できる練習場所検索サービス",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
