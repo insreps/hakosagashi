@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-sans: "Noto Sans JP", "Plus Jakarta Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+    --studio-bg: #FAF8F5;
+    --studio-surface: #F2EFE9;
+    --studio-card: #FFFFFF;
+    --studio-ink: #1C1917;
+    --studio-muted: #57534E;
+    --studio-border: #E4DFD7;
+    --studio-accent: #0D5C53;
+    --studio-accent-hover: #09433D;
+    --studio-accent-soft: #EEF6F4;
+    --ease-studio: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--studio-bg);
+    color: var(--studio-ink);
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-feature-settings: "palt";
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--studio-accent);
+    outline-offset: 2px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "palt";
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.studio-transition {
+  transition-timing-function: var(--ease-studio);
+  transition-duration: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
