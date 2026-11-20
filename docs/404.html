@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HakoSagashi</title>
+    <script>
+      (function () {
+        var l = window.location;
+        var p = l.pathname;
+        var roomsIdx = p.indexOf('/rooms/');
+        if (roomsIdx !== -1) {
+          l.replace(l.protocol + '//' + l.host + p.slice(0, roomsIdx) + '/#' + p.slice(roomsIdx) + l.search);
+          return;
+        }
+        var searchIdx = p.lastIndexOf('/search');
+        if (searchIdx !== -1 && (searchIdx + 7 === p.length || p.slice(searchIdx) === '/search/')) {
+          l.replace(l.protocol + '//' + l.host + p.slice(0, searchIdx) + '/#/search' + l.search);
+          return;
+        }
+        var parts = p.split('/').filter(Boolean);
+        var repoBase = '/';
+        if (parts.length > 0 && l.hostname.slice(-9) === 'github.io') {
+          repoBase = parts[1] === 'docs' ? '/' + parts[0] + '/docs/' : '/' + parts[0] + '/';
+        }
+        l.replace(l.protocol + '//' + l.host + repoBase);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
