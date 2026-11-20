@@ -11,7 +11,7 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "test": "tsx --test src/utils/*.test.ts",
-    "deploy": "npm run build && gh-pages -d dist -t"
+    "deploy": "npm run build && gh-pages -d dist -t && --repo https://github.com/insreps/hakosagashi.git"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
